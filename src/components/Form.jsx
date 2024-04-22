@@ -69,7 +69,7 @@ function Form() {
         //page reload
         window.location.reload();
       } catch (error) {
-        console.error('Error submitting Form:', error);
+        console.error('Error submitting form', error);
         //Handle error accordingly
 
 
@@ -115,7 +115,7 @@ function Form() {
 
 
 
-        <textarea id="" cols="30" rows="10" className={`form-control mt-3 ${errors.name && 'is-invalid'}`} onChange={handleChange} name="message" value={formData.message} placeholder='Enter your Message'></textarea>
+        <textarea id="" cols="30" rows="10" className={`form-control mt-3 ${errors.message && 'is-invalid'}`} onChange={handleChange} name="message" value={formData.message} placeholder='Enter your Message'></textarea>
         {errors.message && <div className='invalid-feedback'>{errors.message}</div>}
 
 
