@@ -49,17 +49,7 @@ function Form() {
 
 
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   if (validateForm()) {
-  //     // Process form submission
-  //     alert('Message sent Successfully')
-
-  //     console.log(formData);
-  //     // Redirect to another page
-  //     window.location.href = '/Contact';
-  //   }
-  // };
+  
 
 
 
