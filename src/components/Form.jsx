@@ -75,10 +75,7 @@ function Form() {
         //Handle error accordingly
 
 
-        // console.log(formData);
-        // Redirect to another page
-        //page reload
-        // window.location.href = '/Contact';
+        
       }
 
 
