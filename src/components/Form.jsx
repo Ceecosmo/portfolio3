@@ -1,11 +1,10 @@
-
 import React, { useState } from 'react'
 import axios from 'axios'
 function Form() {
 
   const [formData, setFormData] = useState({
     name:'',
-    email:'', 
+    email:'',
     subject:'',
     phone:'',
     message:''
@@ -39,7 +38,7 @@ function Form() {
     if (!formData.message.trim()) {
       errors.message = 'Message is required';
     } else if (formData.message.length < 10) {
-      errors.message = 'Text is too small, More text required'
+      errors.message = 'Text is too small, More than 9 text required'
     }
     // You can add more validation rules for other fields as needed
     setErrors(errors);
@@ -48,7 +47,17 @@ function Form() {
 
 
 
-  
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   if (validateForm()) {
+  //     // Process form submission
+  //     alert('Message sent Successfully')
+
+  //     console.log(formData);
+  //     // Redirect to another page
+  //     window.location.href = '/Contact';
+  //   }
+  // };
 
 
 
@@ -58,23 +67,25 @@ function Form() {
     e.preventDefault();
     if (validateForm()) {
 
-      try {
-
+      try{
 
         const response = await axios.post('https://priestwelfareadmin.onrender.com/contact/postcontact/', formData);
         console.log('Form submitted:', response.data);
         //Assuming the form submission was successful, you can handle it here
-        // Process form submission
-        alert('Message sent Successfully');
+         // Process form submission
+      alert('Message sent Successfully');
 
-        //page reload
-        window.location.reload();
+      //page reload
+      window.location.reload();
       } catch (error) {
         console.error('Error submitting form', error);
         //Handle error accordingly
 
 
-        
+         // console.log(formData);
+      // Redirect to another page
+      //page reload
+      // window.location.href = '/Contact';
       }
 
 
@@ -120,7 +131,7 @@ function Form() {
         {errors.message && <div className='invalid-feedback'>{errors.message}</div>}
 
 
-        <button className="btn btn-danger mt-2">Send</button>
+        <button className="btn btn-danger mt-2">Submit</button>
       </form>
 
 
