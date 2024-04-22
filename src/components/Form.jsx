@@ -4,9 +4,9 @@ function Form() {
 
   const [formData, setFormData] = useState({
     name: '',
-    email: '',
-    phone: '',
+    email: '', 
     subject: '',
+    phone: '',
     message: ''
   });
 
@@ -34,9 +34,7 @@ function Form() {
     }
     if (!formData.subject.trim()) {
       errors.subject = 'Subject is required';
-    } else if (formData.subject.length < 5) {
-      errors.subject = 'Text is too small,More text required'
-    }
+    } 
     if (!formData.message.trim()) {
       errors.message = 'Message is required';
     } else if (formData.message.length < 10) {
@@ -109,7 +107,7 @@ function Form() {
           </div>
           <div className="flex-grow-1 ms-2">
 
-            <input type="text" name='subject' value={formData.subject} placeholder='Subject' className={`form-control ${errors.name && 'is-invalid'}`} onChange={handleChange} />
+            <input type="text" name='subject' value={formData.subject} placeholder='Subject' className={`form-control ${errors.subject && 'is-invalid'}`} onChange={handleChange} />
 
             {errors.subject && <div className='invalid-feedback'>{errors.subject}</div>}
           </div>
@@ -117,7 +115,7 @@ function Form() {
 
 
 
-        <textarea id="" cols="30" rows="10" className={`form-control mt-3 ${errors.name && 'is-invalid'}`} onChange={handleChange} name="message" value={formData.message} placeholder='Enter your Message'></textarea>
+        <textarea id="" cols="30" rows="10" className={`form-control mt-3 ${errors.message && 'is-invalid'}`} onChange={handleChange} name="message" value={formData.message} placeholder='Enter your Message'></textarea>
         {errors.message && <div className='invalid-feedback'>{errors.message}</div>}
 
 
