@@ -3,11 +3,11 @@ import axios from 'axios'
 function Form() {
 
   const [formData, setFormData] = useState({
-    name: '',
-    email: '', 
-    subject: '',
-    phone: '',
-    message: ''
+    name:'',
+    email:'', 
+    subject:'',
+    phone:'',
+    message:''
   });
 
   //error message
